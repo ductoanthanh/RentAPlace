@@ -1,0 +1,56 @@
+{
+  "name": "travel-sleep",
+  "version": "0.1.0",
+  "engines": {
+    "node": "8.11.1",
+    "npm": "5.6.0"
+  },
+  "private": true,
+  "proxy": {
+    "api/v1/*": {
+      "target": "http://localhost:9999"
+    }
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "bcrypt": "^3.0.0",
+    "body-parser": "^1.18.3",
+    "bootstrap": "^4.0.0",
+    "bootstrap-daterangepicker": "^3.0.3",
+    "camel-case": "^3.0.0",
+    "express": "^4.16.3",
+    "font-awesome": "^4.7.0",
+    "jquery": "^3.3.1",
+    "jsonwebtoken": "^8.3.0",
+    "moment": "^2.22.2",
+    "mongoose": "^5.2.12",
+    "node-sass-chokidar": "^1.2.2",
+    "npm-run-all": "^4.1.2",
+    "popper.js": "^1.14.3",
+    "react": "^16.4.2",
+    "react-bootstrap-daterangepicker": "^4.1.0",
+    "react-dom": "^16.4.2",
+    "react-google-maps": "^9.4.5",
+    "react-redux": "^5.0.7",
+    "react-responsive-modal": "^3.5.1",
+    "react-router-dom": "^4.3.1",
+    "react-scripts": "^1.1.4",
+    "react-toastify": "^4.4.3",
+    "redux": "^3.7.2",
+    "redux-form": "^7.4.2",
+    "redux-thunk": "^2.2.0",
+    "titleize": "^1.0.1"
+  },
+  "scripts": {
+    "heroku-postbuild": "npm run build",
+    "build-css": "node-sass-chokidar ./src -o ./src",
+    "watch-css": "npm run build-css && node-sass-chokidar ./src -o ./src --watch --recursive",
+    "start-js": "NODE_PATH=src/ react-scripts start",
+    "start": "npm start --prefix server",
+    "start-dev": "npm-run-all -p watch-css start-js",
+    "build-js": "NODE_PATH=src/ react-scripts build",
+    "build": "npm-run-all build-css build-js",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}
