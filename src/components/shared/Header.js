@@ -52,7 +52,7 @@ class Header extends React.Component {
     return (
       <nav className='navbar navbar-dark navbar-expand-lg'>
         <div className='container'>
-          <Link className='navbar-brand' to='/rentals'>RentAPlace
+          <Link className='navbar-brand' to='/rentals'>Travel Sleep
             <img src={process.env.PUBLIC_URL + '/img/react-logo.svg'} alt=""/>
           </Link>
           <RentalSearchInput />

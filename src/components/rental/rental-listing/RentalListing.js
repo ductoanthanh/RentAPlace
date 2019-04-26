@@ -11,7 +11,7 @@ class RentalListing extends Component {
   render() {
     return (
       <section id="rentalListing">
-        <h1 className="page-title">Your Home All Around the World</h1>
+        <h1 className="page-title">Find an apartment for your trip everywhere in the world</h1>
         <RentalList rentals={this.props.rentals} />
       </section>
     )
