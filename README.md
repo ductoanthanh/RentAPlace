@@ -158,43 +158,66 @@ Header payload:
 | --- | --- | --- |
 | authorization | string | Server Token |
 
+Request payload
+
+| key |	type | description |
+| --- | --- | --- |
+| startAt | timestamp | |
+| endAt | timestamp | |
+| days | int | |
+| guests | int | |
+| totalPrice | int | |
+| rental | object | |
+| id | string | |
+
 Response payload
 
 | key |	type | description |
 | --- | --- | --- |
-| status | string | |
+| startAt | timestamp | |
+| endAt | timestamp | |
 
+Sample request:
+
+```json
+{
+  "days": 2,
+  "endAt": "2019/06/12",
+  "guests": 2,
+  "startAt": "2019/06/10",
+  "totalPrice": 44,
+  "rental": {
+    "bedrooms": 1,
+    "bookings": [
+      {
+        "startAt": "2019-05-08T00:00:00.000Z", 
+        "endAt": "2019-05-10T00:00:00.000Z"
+      }
+    ],
+    "category": "apartment",
+    "city": "helsinki",
+    "createdAt": "2019-05-03T07:16:08.525Z",
+    "dailyRate": 22,
+    "description": "This is super nice",
+    "image": "https://i.ibb.co/2tgDqZT/apartment-photo.jpg",
+    "shared": false,
+    "street": "Eerikinkatu 6",
+    "title": "Helsinki rental",
+    "user": {
+      "username": "toan"
+    },
+    "__v": 2,
+    "_id": "5ccbeab889aed40021c3e595"
+  }
+}
+```
 
 Sample response:
 
 ```json
 {
-  "bookings": [],
-  "_id": "5ccd91f2d1b416002191942a",
-  "title": "Nice apartment",
-  "city": "helsinki",
-  "street": "Eerikinkatu 5",
-  "category": "house",
-  "image": "https://i.ibb.co/2tgDqZT/apartment-photo.jpg",
-  "shared": false,
-  "bedrooms": 2,
-  "description": "This is super nice",
-  "dailyRate": 99,
-  "createdAt": "2019-05-04T13:21:54.702Z",
-  "user": {
-      "rentals": [
-          "5ccd8fd4d1b4160021919429"
-      ],
-      "bookings": [
-          "5ccd8dfdd1b4160021919427"
-      ],
-      "_id": "5ccd794a9664940021456dd8",
-      "username": "toan1234",
-      "email": "toan1234@gmail.com",
-      "password": "$2b$10$ul9GbomTl8nqEKaoYXderugk7qsusfhFjry02kP1kjY8/RM9.YAF.",
-      "__v": 0
-  },
-  "__v": 0
+  "startAt":"2019-06-10T00:00:00.000Z",
+  "endAt":"2019-06-12T00:00:00.000Z"
 }
 ```
 
@@ -347,6 +370,12 @@ Header payload:
 | --- | --- | --- |
 | authorization | string | Server Token |
 
+Response payload
+
+| key |	type | description |
+| --- | --- | --- |
+| status | string | |
+
 Sample response:
 
 ```json
@@ -376,12 +405,6 @@ Response payload
 | shared | boolean | |
 | street | string | |
 | title | string | |
-
-Response payload
-
-| key |	type | description |
-| --- | --- | --- |
-| status | string | |
 
 Sample request:
 
